@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 	http://www.springframework.org/schema/beans/spring-beans.xsd
+ 	http://www.springframework.org/schema/context 
+ 	http://www.springframework.org/schema/context/spring-context.xsd
+ 	http://www.springframework.org/schema/util
+ 	http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- stand-alone list -->
+	<!-- java.util.Vector -->
+	<util:list list-class="java.util.LinkedList"
+		id="mybestfriend">
+		<value> Hitesh </value>
+		<value> Ganesh </value>
+		<value> Nikita </value>
+		<value> Shamal </value>
+		<value> Komal </value>
+		<value> Nilima </value>
+		<value> Shruti </value>
+	</util:list>
+
+	<!-- Stand alone Map -->
+	<!-- java.util.TreeMap -->
+	<util:map map-class="java.util.HashMap" id="fees">
+		<entry key="Spring" value="1234" />
+		<entry key="Java" value="334" />
+		<entry key="Python" value="5555" />
+		<entry key="C" value="8888" />
+		<entry key="C++" value="66666" />
+	</util:map>
+
+	<!-- Stand alone Properties -->
+	<util:properties id="dbconfig">
+		<prop key="driver">com.jdbc.mysql.Driver</prop>
+		<prop key="Lenovo">G5080</prop>
+		<prop key="user-name">Hitesh</prop>
+		<prop key="pass-word">hitesh@12</prop>
+		<prop key="url">https://stackoverflow.com/questions/21559718/javalocal-variable-may-not-have-been-initialized
+		</prop>
+	</util:properties>
+
+
+	<bean class="com.springDemo.standalone.collections.Person"
+		name="person1">
+		<property name="friends">
+			<ref bean="mybestfriend" />
+		</property>
+
+		<property name="fees" ref="fees" />
+		<property name="props" ref="dbconfig" />
+	</bean>
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 	http://www.springframework.org/schema/beans/spring-beans.xsd
+ 	http://www.springframework.org/schema/context 
+ 	http://www.springframework.org/schema/context/spring-.xsd">
+
+	<!-- this is our bean -->
+	<bean class="com.springDemo.reference.B" name="B_ref">
+		<property name="y" value="101" />
+	</bean>
+
+	<!-- <bean class="com.springDemo.reference.A" name="A_ref"> <property name="x" 
+		value="20" /> type - 1 <property name="obj"> <ref bean="B_ref" /> </property> 
+		type - 2 <property name="obj" ref="B_ref"/> </bean> -->
+
+	<bean class="com.springDemo.reference.A" name="A_ref" p:x="23"
+		p:obj-ref="B_ref" />
+</beans>

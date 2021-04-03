@@ -1,0 +1,30 @@
+- @Entity : use to make any class as Entity
+- @Table : use to change table details
+- @Id : use to mark coln as primary key
+- @GeneratedValue : hibernate perform auto incremant opration via this annotation
+- @Column : change the colm name in database table
+			eg. in class there is name entity and i want that this name entity name changein database.
+- @Transient : if we want city entity coln data shoun'nt insert in database that time we will use it on this entity.
+- @Temporal : use to make date in specific formate
+- @Lob : large object data . eg blob
+- @Embeddable : it use for embed object entityes in declare class table 
+				eg. in Student cls -> Address addr there means it will add all Entitys of Address in Student class table 
+- @OneToOne : 
+- @OneToMany : 
+- @ManyToOne : 
+- @JoinColumn : to change the name of foren key colm in existing table
+
+
+
+Hibernate object state
+			 - create obj add assinde values 
+			 			-call save(),data go into database
+			 			       -close session  
+			 			       			- delete opration
+- Transient 	false 	true	false		false
+
+- Persistent			true	false		false
+
+- Detached						true		false
+
+- Remove 									trues go to persistent

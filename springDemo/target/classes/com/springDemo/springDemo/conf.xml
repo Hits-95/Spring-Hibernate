@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 	http://www.springframework.org/schema/beans/spring-beans.xsd
+ 	http://www.springframework.org/schema/context 
+ 	http://www.springframework.org/schema/context/spring-.xsd">
+
+	<!-- this is our bean -->
+	<!-- type 1 -->
+	<bean class="com.springDemo.springDemo.Student" name="Student1">
+		<property name="rollno">
+			<value>01</value>
+		</property>
+		<property name="name">
+			<value> Hitesh Ahire</value>
+		</property>
+		<property name="addr">
+			<value> At Dabli</value>
+		</property>
+	</bean>
+	
+	<!-- type 2 -->
+	<bean class="com.springDemo.springDemo.Student" name="Student2">
+		<property name="rollno" value="02" />
+		<property name="name" value="Nikita " />
+		<property name="addr" value="Pachora" />
+	</bean>
+	
+	<!-- type 3 -->
+	<bean class="com.springDemo.springDemo.Student" name="Student3" p:rollno="03" p:name="Pradhunya" p:addr="Tehare"/>
+
+</beans>

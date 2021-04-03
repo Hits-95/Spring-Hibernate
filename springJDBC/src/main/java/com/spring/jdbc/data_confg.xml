@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 	http://www.springframework.org/schema/beans/spring-beans.xsd
+ 	http://www.springframework.org/schema/context 
+ 	http://www.springframework.org/schema/context/spring-context.xsd
+ 	http://www.springframework.org/schema/util
+ 	http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- use for connect with mysql -->
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		name="conn">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://127.0.0.1:3306/springjdbc" />
+		<property name="username" value="Hitesh" />
+		<property name="password" value="online" />
+	</bean>
+
+	<!-- use for mysql oprations and get refrance -->
+	<bean class="org.springframework.jdbc.core.JdbcTemplate"
+		name="jdbcTemp" p:dataSource-ref="conn" />
+
+	<!-- pass refrance to an studentDao class in there JdbcTemplate variable 
+		is declare already -->
+	<bean class="com.spring.jdbc.dao.StudentDaoImpl" name="studentDao">
+		<property name="jdbcTemplate" ref="jdbcTemp" />
+	</bean>
+
+	<!-- make object of student -->
+	<bean class="com.spring.jdbc.entites.Student" name="student1">
+		<property name="id" value="10" />
+		<property name="naem" value="Shruti Amrutkr" />
+		<property name="city" value="@ Dhule, Nashik" />
+
+	</bean>
+
+</beans>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 	http://www.springframework.org/schema/beans/spring-beans.xsd
+ 	http://www.springframework.org/schema/context 
+ 	http://www.springframework.org/schema/context/spring-.xsd">
+
+	<!-- this is our bean -->
+	<!-- type 1 -->
+	<bean class="com.springDemo.collection.Employee" name="Emp1">
+		<property name="name" value="Hitesh" />
+		
+		<property name="phones">
+			<list>
+				<value> 123456789 </value>
+				<value> 434343434 </value>
+				<value> 123232343 </value>
+				<null/>
+			</list>
+		</property>
+
+		<property name="addr">
+			<set>
+				<value> Dabli </value>
+				<value> Kashti </value>
+				<value> Nashik </value>
+			</set>
+		</property>
+
+		<property name="course">
+			<map>
+				<entry key="python" value="4 months" />
+				<entry key="java" value="2 months" />
+				<entry key="c" value="3 months" />
+			</map>
+		</property>
+		
+		<property name="prop">
+			<props>
+				<prop key="username"> hbahire2014@gmail.com</prop>
+				<prop key="password"> Hitesh@123 </prop>
+			</props>
+		</property>
+	</bean>
+</beans>
