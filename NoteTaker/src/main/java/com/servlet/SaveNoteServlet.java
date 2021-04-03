@@ -1,7 +1,7 @@
 package com.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -43,8 +43,8 @@ public class SaveNoteServlet extends HttpServlet {
 			
 			session.save(note);
 			response.setContentType("text/html");
-			response.getWriter().println("<h1 style='text-align' : center> Note is Added successfully.</h1>");
-			response.getWriter().println("<h1 style='text-align' : center> <a href='all_notes.jsp'> View all notes.</a> </h1>");
+			response.getWriter().println("<h1  style = 'text-align: center;'> Note is Added successfully.</h1>");
+			response.getWriter().println("<h1  style = 'text-align: center;'> <a href='all_notes.jsp'> View all notes.</a> </h1>");
 			
 			tx.commit();
 			session.close();
