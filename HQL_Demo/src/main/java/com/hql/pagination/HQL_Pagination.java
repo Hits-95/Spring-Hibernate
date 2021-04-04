@@ -2,6 +2,7 @@ package com.hql.pagination;
 
 import org.hibernate.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -20,7 +21,7 @@ public class HQL_Pagination {
 		Query<Person> query = session.createQuery("from Person", Person.class);
 		
 		//implimate pagination using hibernate
-		query.setFirstResult(0);
+		query.setFirstResult(5);
 		query.setMaxResults(5);
 		
 		//get list
@@ -29,7 +30,16 @@ public class HQL_Pagination {
 		for(Person person : list)
 			System.out.println(person);
 			
+		List<String> list1 = new ArrayList<String>();
 		
+		list1.add("hitesh");
+		list1.add("bhagawam");
+		list1.add("ahire");
+		list1.add("kaka");
+		list1.add("dabli");
+		list1.add("shubham");
+		list1.add("vrushali");
+		list1.add("ganesh");
 		
 		session.close();
 		factory.close();
