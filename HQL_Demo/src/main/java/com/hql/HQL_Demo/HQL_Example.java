@@ -38,6 +38,24 @@ public class HQL_Example {
 		for(Person p : list)
 			System.out.println(p);
 		
+		//delete opration
+		/*System.out.println("_____________________________________");
+		Transaction tx = session.beginTransaction();
+		Query Q_obj1 = session.createQuery("delete from Person as p where p.city =: data");
+		Q_obj1.setParameter("data", "@Dabli");
+		
+		int result = Q_obj1.executeUpdate();
+		
+		System.out.println("deleted : "+result);
+		
+		tx.commit();*/
+		
+		//update oopration
+		Transaction tx = session.beginTransaction();
+		Query Q_obj1 = session.createQuery("update Person set city =: newData where name =: data");
+		Q_obj1.setParameter("newData", "Pachoea");
+		Q_obj1.setParameter("data", "Nikita");
+		
 		
 		
 		/*// Session session = factory.getCurrentSession();
