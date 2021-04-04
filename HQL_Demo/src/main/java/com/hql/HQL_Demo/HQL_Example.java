@@ -1,5 +1,6 @@
 package com.hql.HQL_Demo;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -51,10 +52,21 @@ public class HQL_Example {
 		tx.commit();*/
 		
 		//update oopration
-		Transaction tx = session.beginTransaction();
+		/*Transaction tx = session.beginTransaction();
 		Query Q_obj1 = session.createQuery("update Person set city =: newData where name =: data");
-		Q_obj1.setParameter("newData", "Pachoea");
+		Q_obj1.setParameter("newData", "Pachora");
 		Q_obj1.setParameter("data", "Nikita");
+		int result =  Q_obj1.executeUpdate();
+		System.out.println("updated : " + result);
+		tx.commit();
+		*/
+		
+		//join Query
+		Query Q_obj1 = session.createQuery("select q.questionId, q.question, a.answer from Question as q INNER JOIN q.answers as a");
+		List<Object[]> ls = Q_obj1.getResultList();
+		for(Object[] arr : ls)
+			System.out.println(Arrays.toString(arr));
+		
 		
 		
 		

@@ -28,8 +28,8 @@
 
 					for (Note note : list) {
 				%>
-				<div class="card mt-2">
-					<img class="card-img-top m-4 mx-auto" style="max-width: 100px"
+				<div class="card mt-2 bg-light">
+					<img class="card-img-top  m-4 mx-auto" style="max-width: 100px"
 						src="./img/note.png" alt="Card image cap">
 					<div class="card-body px-5">
 						<h5 class="card-title"><%=note.getTitle()%></h5>
