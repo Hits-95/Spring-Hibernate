@@ -2,6 +2,7 @@ package com.hql.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -30,7 +31,7 @@ public class Question {
 	//que 1 -> ans many
 	//@OneToMany //its create new table for primary and forene keys for avoid this use down method
 	//EAGER : load all data and default is LAZAY
-	@OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "question", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Answer> answers;
 	
 
