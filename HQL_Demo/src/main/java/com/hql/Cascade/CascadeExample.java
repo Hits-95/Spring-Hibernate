@@ -26,7 +26,7 @@ public class CascadeExample {
 		Answer ans2 = new Answer(8, "Somethis id new in that", que);
 		Answer ans3 = new Answer(9, "Lets start to learn.", que);
 		
-		List<Answer> list = new ArrayList<>();
+		List<Answer> list = new ArrayList<Answer>();
 		list.add(ans1);
 		list.add(ans2);
 		list.add(ans3);
